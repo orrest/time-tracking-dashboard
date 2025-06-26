@@ -1,0 +1,9 @@
+@reference "../../styles.css";
+
+.user {
+  @apply max-w-[20.4375rem] max-h-[12.6875rem] bg-navy-900
+}
+
+.track {
+  @apply max-w-[20.4375rem] max-h-[10rem] bg-navy-900
+}
