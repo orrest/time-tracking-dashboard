@@ -1,0 +1,32 @@
+<div class="flex flex-col">
+  <div class="flex flex-col">
+    <div class="flex flex-row">
+      <img [ngSrc]="user.avatar" width="234" height="234">
+      <div>
+        <p>Report for</p>
+        <p>{{user.name }}</p>
+      </div>
+    </div>
+    <div class="flex flex-row">
+      @for (frame of timeFrames; track $index) {
+        <span (click)="onFrameClick(frame)">{{ frame | titlecase }}</span>
+      }
+    </div>
+  </div>
+  @if (tracksFilteredByFrame(); as tracks) {
+    @for (track of tracks; track $index) {
+      <div class="flex flex-row justify-between">
+        <h3>{{ track.title }}</h3>
+        <span>...</span>
+      </div>
+      <div class="flex flex-row justify-between">
+        <h1>{{track.timeEntry.current}}</h1>
+        <small>{{track.timeEntry.previous}}</small>
+      </div>
+    } @empty {
+      <p>No tracks available</p>
+    }
+  } @else {
+    <p>Network error!</p>
+  }
+</div>
