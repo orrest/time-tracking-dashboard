@@ -29,10 +29,10 @@
   @if (tracksFilteredByFrame(); as tracks) {
     @for (track of tracks; track $index) {
       <div class="track-container" ngClass="{{ track.color }}">
-        <div class="absolute -top-2.5 right-4 z-1 flex flex-col items-end">
+        <div class="track-icon">
           <img
             class="sm:h-14 sm:w-14"
-            src="{{ track.icon }}"
+            ngSrc="{{ track.icon }}"
             width="78"
             height="78"
             alt="icon"

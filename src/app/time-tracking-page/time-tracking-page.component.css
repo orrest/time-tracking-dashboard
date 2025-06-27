@@ -1,15 +1,14 @@
 @reference "../../styles.css";
 
 section {
-  @apply flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-[repeat(4,255px)] md:grid-rows-[repeat(2,244px)]
-  md:gap-8;
+  @apply flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-[repeat(4,255px)] md:grid-rows-[repeat(2,244px)] md:gap-8;
 }
 
 .user {
   @apply bg-navy-900 flex flex-col rounded-2xl sm:col-span-3 md:col-span-1 md:row-span-2;
 
   .avatar {
-    @apply flex flex-row items-center gap-6 rounded-2xl bg-purple-600 p-8 flex-wrap md:pb-28 md:gap-10 md:h-2/3;
+    @apply flex flex-row flex-wrap items-center gap-6 rounded-2xl bg-purple-600 p-8 md:h-2/3 md:gap-10 md:pb-28;
 
     img {
       @apply h-16 w-16 rounded-full border-[3px] border-white;
@@ -21,14 +20,18 @@ section {
   }
 
   .frames {
-    @apply py-6 flex h-full flex-row items-center justify-around sm:px-32 md:flex-col md:items-start md:px-8;
+    @apply flex h-full flex-row items-center justify-around py-6 sm:px-32 md:flex-col md:items-start md:px-8;
   }
 }
 
 .track-container {
-  @apply relative flex h-[10rem] sm:h-[13.3125rem] flex-col justify-end overflow-hidden rounded-2xl md:h-full md:w-full;
+  @apply relative flex h-[10rem] flex-col justify-end overflow-hidden rounded-2xl sm:h-[13.3125rem] md:h-full md:w-full;
+
+  .track-icon {
+    @apply absolute -top-2.5 right-4 z-1 flex flex-col items-end;
+  }
 
   .track {
-    @apply bg-navy-900 flex flex-col gap-2 sm:gap-4 md:gap-6 rounded-t-2xl p-6 md:p-8 hover:bg-navy-800;
+    @apply bg-navy-900 hover:bg-navy-800 flex flex-col gap-2 rounded-t-2xl p-6 sm:gap-4 md:gap-6 md:p-8;
   }
 }
