@@ -11,7 +11,7 @@ section {
     @apply flex flex-row flex-wrap items-center gap-6 rounded-2xl bg-purple-600 p-8 md:h-2/3 md:gap-10 md:pb-28;
 
     img {
-      @apply h-16 w-16 rounded-full border-[3px] border-white;
+      @apply h-16 w-16 rounded-full border-[3px] border-white md:h-[78px] md:w-[78px];
     }
 
     .report {
