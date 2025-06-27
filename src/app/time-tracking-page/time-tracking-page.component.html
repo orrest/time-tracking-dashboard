@@ -1,25 +1,19 @@
-<section class="flex flex-col gap-6">
+<section>
   <!--  User-->
   <div class="user">
     <!--    Avatar-->
     <div class="avatar">
-      <img
-        class="h-16 w-16 rounded-full border-[3px] border-white"
-        [ngSrc]="user.avatar"
-        height="234"
-        width="234"
-        alt="user avatar"
-      />
-      <div class="flex flex-col gap-2">
+      <img [ngSrc]="user.avatar" height="234" width="234" alt="user avatar" />
+      <div class="report">
         <span class="text-preset-6 text-navy-200">Report for</span>
-        <p class="text-preset-4 text-white">{{ user.name }}</p>
+        <p class="text-preset-4 md:text-preset-2 text-white">{{ user.name }}</p>
       </div>
     </div>
     <!--    Frames-->
     <div class="frames">
       @for (frame of timeFrames; track $index) {
         <span
-          class="text-preset-5-regular text-purple-500 hover:cursor-pointer"
+          class="text-preset-5-regular text-purple-500 hover:cursor-pointer hover:text-white"
           [ngClass]="{
             'text-white': selectedFrame() === frame,
           }"
@@ -36,16 +30,35 @@
     @for (track of tracks; track $index) {
       <div class="track-container" ngClass="{{ track.color }}">
         <div class="absolute -top-2.5 right-4 z-1 flex flex-col items-end">
-          <img src="{{ track.icon }}" width="78" height="78" alt="icon" />
+          <img
+            class="sm:h-14 sm:w-14"
+            src="{{ track.icon }}"
+            width="78"
+            height="78"
+            alt="icon"
+          />
         </div>
 
         <div class="track z-2">
           <div class="flex flex-row items-center justify-between">
             <h3 class="text-preset-5-medium text-white">{{ track.title }}</h3>
-            <img src="icon-ellipsis.svg" width="21" height="5" alt="more" />
+            <svg
+              class="hover:cursor-pointer hover:fill-white"
+              fill="#BBC0FF"
+              width="21"
+              height="5"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill-rule="evenodd"
+              />
+            </svg>
           </div>
-          <div class="flex flex-row items-center justify-between gap-2">
-            <h1 class="text-preset-3 text-white">
+          <div
+            class="flex flex-row items-center justify-between gap-2 sm:flex-wrap"
+          >
+            <h1 class="text-preset-3 sm:text-preset-1 text-white">
               {{ track.timeEntry.current }}hrs
             </h1>
             <small class="text-preset-6 text-navy-200">

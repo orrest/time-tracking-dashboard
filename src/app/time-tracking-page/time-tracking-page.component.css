@@ -1,21 +1,34 @@
 @reference "../../styles.css";
 
+section {
+  @apply flex flex-col gap-6 sm:grid sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-[repeat(4,255px)] md:grid-rows-[repeat(2,244px)]
+  md:gap-8;
+}
+
 .user {
-  @apply bg-navy-900 flex h-[12.6875rem] w-[20.4375rem] flex-col rounded-2xl;
-}
+  @apply bg-navy-900 flex flex-col rounded-2xl sm:col-span-3 md:col-span-1 md:row-span-2;
 
-.avatar {
-  @apply flex flex-row items-center gap-6 rounded-2xl bg-purple-600 p-8;
-}
+  .avatar {
+    @apply flex flex-row items-center gap-6 rounded-2xl bg-purple-600 p-8 flex-wrap md:pb-28 md:gap-10 md:h-2/3;
 
-.frames {
-  @apply flex h-full flex-row items-center justify-around;
+    img {
+      @apply h-16 w-16 rounded-full border-[3px] border-white;
+    }
+
+    .report {
+      @apply flex flex-col gap-2;
+    }
+  }
+
+  .frames {
+    @apply py-6 flex h-full flex-row items-center justify-around sm:px-32 md:flex-col md:items-start md:px-8;
+  }
 }
 
 .track-container {
-  @apply relative flex h-[10rem] w-[20.4375rem] flex-col justify-end overflow-hidden rounded-2xl;
-}
+  @apply relative flex h-[10rem] sm:h-[13.3125rem] flex-col justify-end overflow-hidden rounded-2xl md:h-full md:w-full;
 
-.track {
-  @apply bg-navy-900 flex h-[7.625rem] flex-col gap-2 rounded-t-2xl p-6;
+  .track {
+    @apply bg-navy-900 flex flex-col gap-2 sm:gap-4 md:gap-6 rounded-t-2xl p-6 md:p-8 hover:bg-navy-800;
+  }
 }

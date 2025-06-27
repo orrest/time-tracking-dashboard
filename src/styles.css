@@ -3,21 +3,42 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-rubik: "Rubik", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
 
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
+  --text-preset-1: 56px;
+  --text-preset-1--line-height: 66px;
+  --text-preset-1--letter-space: 0;
+  --text-preset-1-font-weight: 300;
 
-  --font-preset-1: var(--font-weight-light) 56px/66px var(--font-family-rubik);
-  --font-preset-2: var(--font-weight-light) 40px/47px var(--font-family-rubik);
-  --font-preset-3: var(--font-weight-light) 32px/38px var(--font-family-rubik);
-  --font-preset-4: var(--font-weight-light) 24px/28px var(--font-family-rubik);
-  --font-preset-5-medium: var(--font-weight-medium) 18px/21px
-    var(--font-family-rubik);
-  --font-preset-5-regular: var(--font-weight-regular) 18px/21px
-    var(--font-family-rubik);
-  --font-preset-6: var(--font-weight-regular) 15px/18px var(--font-family-rubik);
+  --text-preset-2: 40px;
+  --text-preset-2--line-height: 47px;
+  --text-preset-2--letter-space: 0;
+  --text-preset-2-font-weight: 300;
+
+  --text-preset-3: 32px;
+  --text-preset-3--line-height: 38px;
+  --text-preset-3--letter-space: 0;
+  --text-preset-3-font-weight: 300;
+
+  --text-preset-4: 24px;
+  --text-preset-4--line-height: 28px;
+  --text-preset-4--letter-space: 0;
+  --text-preset-4-font-weight: 300;
+
+  --text-preset-5-medium: 18px;
+  --text-preset-5-medium--line-height: 21px;
+  --text-preset-5-medium--letter-space: 0;
+  --text-preset-5-medium-font-weight: 500;
+
+  --text-preset-5-regular: 18px;
+  --text-preset-5-regular--line-height: 21px;
+  --text-preset-5-regular--letter-space: 0;
+  --text-preset-5-regular-font-weight: 400;
+
+  --text-preset-6: 15px;
+  --text-preset-6--line-height: 18px;
+  --text-preset-6--letter-space: 0;
+  --text-preset-6-font-weight: 400;
 
   --color-white: #ffffff;
   --color-black: #000000;
@@ -37,6 +58,7 @@
 }
 
 @layer component {
+
 }
 
 @layer base {
@@ -46,6 +68,7 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    font-family: var(--font-rubik), sans-serif;
   }
 
   /* Prevent font size inflation */
@@ -133,33 +156,3 @@
   }
 }
 
-@layer utilities {
-  .text-preset-1 {
-    font: var(--font-preset-1);
-    letter-spacing: 0;
-  }
-  .text-preset-2 {
-    font: var(--font-preset-2);
-    letter-spacing: 0;
-  }
-  .text-preset-3 {
-    font: var(--font-preset-3);
-    letter-spacing: 0;
-  }
-  .text-preset-4 {
-    font: var(--font-preset-4);
-    letter-spacing: 0;
-  }
-  .text-preset-5-medium {
-    font: var(--font-preset-5-medium);
-    letter-spacing: 0;
-  }
-  .text-preset-5-regular {
-    font: var(--font-preset-5-regular);
-    letter-spacing: 0;
-  }
-  .text-preset-6 {
-    font: var(--font-preset-6);
-    letter-spacing: 0;
-  }
-}
