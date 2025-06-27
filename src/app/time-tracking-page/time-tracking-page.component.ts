@@ -54,7 +54,7 @@ export class TimeTrackingPageComponent {
           break;
         }
         case 'Social': {
-          o = { icon: 'icon-social.svg', color: 'bg-purple-500' };
+          o = { icon: 'icon-social.svg', color: 'bg-purple-700' };
           break;
         }
         case 'Self Care': {
