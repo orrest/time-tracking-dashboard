@@ -28,7 +28,7 @@ export class TimeTrackingPageComponent {
     { initialValue: [] },
   );
 
-  selectedFrame: WritableSignal<TimeFrame> = signal<TimeFrame>('daily');
+  selectedFrame: WritableSignal<TimeFrame> = signal<TimeFrame>('weekly');
 
   tracksFilteredByFrame: Signal<TrackVm[]> = computed(() => {
     const selectedFrame = this.selectedFrame();
