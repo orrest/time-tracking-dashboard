@@ -1,22 +1,32 @@
 <section class="flex flex-col gap-6">
   <!--  User-->
-  <div class="user flex flex-col">
-    <div class="flex flex-row bg-purple-600">
+  <div class="user">
+    <!--    Avatar-->
+    <div class="avatar">
       <img
-        class="h-16 w-16"
+        class="h-16 w-16 rounded-full border-[3px] border-white"
         [ngSrc]="user.avatar"
         height="234"
         width="234"
         alt="user avatar"
       />
-      <div>
-        <p>Report for</p>
-        <p>{{ user.name }}</p>
+      <div class="flex flex-col gap-2">
+        <span class="text-preset-6 text-navy-200">Report for</span>
+        <p class="text-preset-4 text-white">{{ user.name }}</p>
       </div>
     </div>
-    <div class="flex flex-row">
+    <!--    Frames-->
+    <div class="frames">
       @for (frame of timeFrames; track $index) {
-        <span (click)="onFrameClick(frame)">{{ frame | titlecase }}</span>
+        <span
+          class="text-preset-5-regular text-purple-500 hover:cursor-pointer"
+          [ngClass]="{
+            'text-white': selectedFrame() === frame,
+          }"
+          (click)="onFrameClick(frame)"
+        >
+          {{ frame | titlecase }}
+        </span>
       }
     </div>
   </div>
@@ -24,14 +34,24 @@
   <!--  Tracks-->
   @if (tracksFilteredByFrame(); as tracks) {
     @for (track of tracks; track $index) {
-      <div class="track">
-        <div class="flex flex-row justify-between">
-          <h3>{{ track.title }}</h3>
-          <span>...</span>
+      <div class="track-container" ngClass="{{ track.color }}">
+        <div class="absolute -top-2.5 right-4 z-1 flex flex-col items-end">
+          <img src="{{ track.icon }}" width="78" height="78" alt="icon" />
         </div>
-        <div class="flex flex-row justify-between">
-          <h1>{{ track.timeEntry.current }}</h1>
-          <small>{{ track.timeEntry.previous }}</small>
+
+        <div class="track z-2">
+          <div class="flex flex-row items-center justify-between">
+            <h3 class="text-preset-5-medium text-white">{{ track.title }}</h3>
+            <img src="icon-ellipsis.svg" width="21" height="5" alt="more" />
+          </div>
+          <div class="flex flex-row items-center justify-between gap-2">
+            <h1 class="text-preset-3 text-white">
+              {{ track.timeEntry.current }}hrs
+            </h1>
+            <small class="text-preset-6 text-navy-200">
+              Last Week - {{ track.timeEntry.previous }}hrs
+            </small>
+          </div>
         </div>
       </div>
     } @empty {

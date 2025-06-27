@@ -1,9 +1,21 @@
 @reference "../../styles.css";
 
 .user {
-  @apply max-w-[20.4375rem] max-h-[12.6875rem] bg-navy-900
+  @apply bg-navy-900 flex h-[12.6875rem] w-[20.4375rem] flex-col rounded-2xl;
+}
+
+.avatar {
+  @apply flex flex-row items-center gap-6 rounded-2xl bg-purple-600 p-8;
+}
+
+.frames {
+  @apply flex h-full flex-row items-center justify-around;
+}
+
+.track-container {
+  @apply relative flex h-[10rem] w-[20.4375rem] flex-col justify-end overflow-hidden rounded-2xl;
 }
 
 .track {
-  @apply max-w-[20.4375rem] max-h-[10rem] bg-navy-900
+  @apply bg-navy-900 flex h-[7.625rem] flex-col gap-2 rounded-t-2xl p-6;
 }
